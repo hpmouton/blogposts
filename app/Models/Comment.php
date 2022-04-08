@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use app\Models\Author;
+use app\Models\BlogPost;
 
-class Profile extends Model
+class Comment extends Model
 {
     use HasFactory;
-    public function author(){
-        return $this->belongsTo(Author::class);
+    public function blogPost(){
+        return $this->belongsTo(BlogPost::class);
     }
 }
