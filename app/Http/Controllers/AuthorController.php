@@ -83,7 +83,7 @@ class AuthorController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('authors.edit',['author' => Author::findOrFail($id)]);
     }
 
     /**
@@ -93,9 +93,17 @@ class AuthorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreAuthor $request, $id)
     {
-        //
+        $author = Author::findOrFail($id);
+        $validated = $request->validated();
+        $author->fill($validated);
+        $author->profile->fill($validated);
+        $author->save();
+
+        $request->session()->flash('status','Author Was Successfully Updated');
+
+        return redirect()->route('author.index',['author'=> $author->id]);
     }
 
     /**

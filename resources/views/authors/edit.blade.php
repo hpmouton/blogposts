@@ -4,7 +4,7 @@
 
 <div class="container">
     <h1>Edit The Post Details</h1>
-    <form action="{{ route('authors.store')}}" method="POST">
+    <form action="{{ route('author.store')}}" method="POST">
         @csrf
         @include('authors.partials.form')
         <button type="submit" class="btn btn-primary">Update</button>

@@ -22,7 +22,7 @@
                 <td>{{ $author['name']}}</td>
                 <td>{{ $author->profile->email }}</td>
                 <td>
-                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="{{ route('author.edit',['author'=>$author->id]) }}" class="btn btn-primary">Edit</a>
 
 
                 </td>
