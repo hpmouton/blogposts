@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\AuthorController;
 
 
 
@@ -22,10 +23,12 @@ Route::get('/',[HomeController::class, 'home'])->name('home.index');
 //contact route
 Route::get('/contact',[HomeController::class, 'contact'])->name('home.contact');
 
-//posts array
+//author routes
+Route::resource('author', AuthorController::class);
 
 //blog route
 Route::resource('blogposts', BlogPostController::class);
+
 
 
 
