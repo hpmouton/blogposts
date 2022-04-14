@@ -5,7 +5,7 @@
          </div>
          <div class="form-group">
             <label for="email">Author Email</label>
-            <textarea class="form-control" name="email" id="email" ></textarea>
+            <input class="form-control" name="email" id="email" >
           </div>
           <br>
                 <br>

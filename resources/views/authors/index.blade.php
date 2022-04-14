@@ -27,7 +27,7 @@
 
                 </td>
                 <td><form
-                    action="#"
+                    action="{{route('author.destroy',['author'=>$author->id])}}"
                     method="POST">
                     @csrf
                     @method('DELETE')

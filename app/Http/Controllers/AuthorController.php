@@ -106,6 +106,14 @@ class AuthorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $authors = Author::findOrFail($id);
+        $authors->profile->delete();
+        $authors->delete();
+
+
+
+        session()->flash('status','Author ' .$id. ' was deleted');
+
+        return redirect()->route('author.index');
     }
 }
