@@ -7,6 +7,7 @@ use DB;
 use App\Models\Author;
 use App\Models\Profile;
 use App\Http\Requests\StoreAuthor;
+use Arr;
 
 
 class AuthorController extends Controller
@@ -97,13 +98,18 @@ class AuthorController extends Controller
     {
         $author = Author::findOrFail($id);
         $validated = $request->validated();
-        $author->fill($validated);
-        $author->profile->fill($validated);
+        $name = Arr::pull($validated,'name');
+        $email = Arr::pull($validated,'email');
+        $author->update(['name'=> $name]);
+        $author->profile->update(['email'=>$email]);
+
+
+
         $author->save();
 
         $request->session()->flash('status','Author Was Successfully Updated');
 
-        return redirect()->route('author.index',['author'=> $author->id]);
+        return redirect()->route('author.index');
     }
 
     /**

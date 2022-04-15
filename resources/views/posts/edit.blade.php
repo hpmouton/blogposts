@@ -4,8 +4,9 @@
 
 <div class="container">
     <h1>Edit The Post Details</h1>
-    <form action="{{ route('blogposts.store')}}" method="POST">
+    <form action="{{ route('blogposts.store',['blogpost'=>$blogpost->id])}}" method="POST">
         @csrf
+        @method('PUT')
         @include('posts.partials.form')
         <button type="submit" class="btn btn-primary">Update</button>
 

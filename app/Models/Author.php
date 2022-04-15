@@ -9,7 +9,11 @@ use App\Models\Profile;
 class Author extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+    ];
     public function profile(){
+
         return $this->hasOne(Profile::class);
 
     }
