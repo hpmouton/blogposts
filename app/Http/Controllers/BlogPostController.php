@@ -98,6 +98,7 @@ class BlogPostController extends Controller
     {
         //
         $blogpost = BlogPost::findOrFail($id);
+
         $validated = $request->validated();
         $blogpost->fill($validated);
         $blogpost->blogPostIsHighlight = $request['blogPostIsHighlight'] == 'on' ? 1:0 ;
@@ -105,7 +106,7 @@ class BlogPostController extends Controller
 
         $request->session()->flash('status','Blog Post Was Successfully Updated');
 
-        return redirect()->route('posts.show',['blogpost'=> $blogpost->id]);
+        return redirect()->route('blogposts.index');
     }
 
     /**
