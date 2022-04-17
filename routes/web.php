@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InternalAreaContoller;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CommentController;
@@ -21,9 +22,8 @@ use App\Http\Controllers\CommentController;
 */
 
 Route::get('/',[HomeController::class, 'home'])->name('home.index');
-//contact route
+Route::get('/home',[InternalAreaController::class, 'index'])->name('home.home');
 Route::get('/contact',[HomeController::class, 'contact'])->name('home.contact');
-
 //author routes
 Route::resource('author', AuthorController::class);
 
@@ -40,3 +40,6 @@ Route::resource('comments', CommentController::class);
 Route::get('/recent-posts/{days_ago?}', function ($daysAgo = 20) {
     return 'Posts from '.$daysAgo. 'days ago.';
 })->name('posts.recent.index');
+
+Auth::routes();
+
