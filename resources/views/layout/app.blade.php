@@ -92,13 +92,14 @@
         @yield('content')
     </div>
 
+    <script src="{{asset('js/app.js')}}">
 </body>
 <footer>
     <div class="text-center">
         &copy; Global Intercultural Project Experience <script>document.write(new Date().getFullYear())</script>
 
     </div>
-    <script src="{{asset('js/app.js')}}">
+
 
 </footer>
 

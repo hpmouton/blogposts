@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InternalAreaContoller;
+use App\Http\Controllers\InternalAreaController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CommentController;
@@ -22,7 +22,7 @@ use App\Http\Controllers\CommentController;
 */
 
 Route::get('/',[HomeController::class, 'home'])->name('home.index');
-Route::get('/home',[InternalAreaController::class, 'index'])->name('home.home');
+Route::get('/home',[HomeController::class, 'index'])->name('home.home');
 Route::get('/contact',[HomeController::class, 'contact'])->name('home.contact');
 //author routes
 Route::resource('author', AuthorController::class);

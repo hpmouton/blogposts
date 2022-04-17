@@ -120,8 +120,7 @@ class BlogPostController extends Controller
     {
         $blogpost = BlogPost::findOrFail($id);
         $this->authorize('blogposts.delete',$blogpost);
-        foreach($comments as $comment)
-            $comment->delete();
+        $blogpost->comments()->delete();
 
         $blogpost->delete();
 
