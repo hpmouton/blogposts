@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.nav')
 @section('title','Blog Posts Page')
 @section('content')
 <div class="container">

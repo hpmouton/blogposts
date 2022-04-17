@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BlogPost;
-use App\Requests\CommentRequest;
+use App\Http\Requests\CommentRequest;
+use App\Models\Comment;
 
 class CommentController extends Controller
 {
@@ -37,11 +38,11 @@ class CommentController extends Controller
      */
     public function store(CommentRequest $request)
     {
-        $validated = $request->validate();
+        $validated = $request;
         $comment = new Comment();
 
-        $comment->commentContent = $validate['commentContent'];
-        $blogpost = BlogPost::find($validate['id']);
+        $comment->commentContent = $validated['commentContent'];
+        $blogpost = BlogPost::find($validated['id']);
 
         $comment->blog_post_id = $blogpost->id;
         $comment->save();

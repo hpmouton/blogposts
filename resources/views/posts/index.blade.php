@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.nav')
 @section('title','Blog Posts Page')
 @section('content')
 <div class="container">
@@ -9,6 +9,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Content</th>
+                <th scope="col">Comments</th>
                 <th scope="col">Highlight</th>
                 <th scope="col">Actions</th>
             </tr>
@@ -19,6 +20,8 @@
                 <th scope="row">{{$key+1}}</th>
                 <td>{{$blogpost['blogPostTitle']}}</td>
                 <td>{{$blogpost['blogPostContent']}}</td>
+                <td>{{$blogpost['comments_count'];}}</td>
+
                 <td>{{$blogpost['blogPostIsHighlight']==1 ? 'YES' : 'NO'}}</td>
                 <td>
                     <a href="{{ route('blogposts.edit',['blogpost'=>$blogpost->id]) }}" class="btn btn-primary">Edit</a>

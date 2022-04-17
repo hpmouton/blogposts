@@ -1,22 +1,17 @@
-@extends('layout.app')
-@section('title', 'Create Author')
+@extends('layout.nav')
+@section('title', 'Create Comment')
 @section('content')
-
-<div class="container">
-    <div class="h1">
-        <label >Create a new Comment</label>
-    </div>
-    <form action="{{ route('comments.store') }}" method="POST">
+    <form action="{{route('comments.store')}}" method="post">
         @csrf
-        @include('comments.partials.form')
-        <button type="submit" class="btn btn-primary">Create</button>
+        <div class="container">
+            @include('comments.partials.form')
+            <button type="submit" class="btn btn-primary">Create</button>
+
+
+        </div>
+
+
 
     </form>
-
-
-
-
-</div>
-
 
 @endsection

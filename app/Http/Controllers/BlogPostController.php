@@ -19,10 +19,11 @@ class BlogPostController extends Controller
      */
     public function index()
     {
-        $posts = DB::select('select * from blog_posts');
+        $blogpost = BlogPost::withCount('comments')->get();
 
-        return view('posts.index',['blogpost'=>BlogPost::all()]);
+        return view('posts.index',compact('blogpost'));
 
+        //return (dd($blogpost));
 
 
 
