@@ -119,6 +119,10 @@ class BlogPostController extends Controller
     public function destroy($id)
     {
         $blogpost = BlogPost::findOrFail($id);
+        $this->authorize('blogposts.delete',$blogpost);
+        foreach($comments as $comment)
+            $comment->delete();
+
         $blogpost->delete();
 
         session()->flash('status','Blog Post with ID ' .$id. ' was deleted');
