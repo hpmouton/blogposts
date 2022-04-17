@@ -1,7 +1,8 @@
-@extends('layout.nav')
+@extends('layout.app')
 @section('content')
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">GIPE 2022</a>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-sm ">
+        <a class="navbar-brand" href="{{(route('home.index'))}}">GIPE 2022</a>
 
 
                 <li class="nav-item">
@@ -34,3 +35,5 @@
             </ul>
         </div>
     </nav>
+
+</div>
