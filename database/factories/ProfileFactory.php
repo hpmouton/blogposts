@@ -18,6 +18,8 @@ class ProfileFactory extends Factory
     {
         return [
             //
+            'email'=>$this->faker->userName().'@letsgipe.com'
+
         ];
     }
 }

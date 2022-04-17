@@ -18,6 +18,9 @@ class BlogPostFactory extends Factory
     {
         return [
             //
+            'blogPostTitle'=>$this->faker->sentence(4,true),
+            'blogPostContent'=>$this->faker->text(200),
+            'blogPostIsHighlight'=>$this->faker->randomElement(array('0','1')),
         ];
     }
 }

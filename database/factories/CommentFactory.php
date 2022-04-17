@@ -18,6 +18,7 @@ class CommentFactory extends Factory
     {
         return [
             //
+            'commentContent'=>$this->faker->text(100),
         ];
     }
 }
