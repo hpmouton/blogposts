@@ -1,4 +1,4 @@
-@extends('layout.nav')
+@extends('layout.app')
 @section('title', 'Update Author')
 @section('content')
 

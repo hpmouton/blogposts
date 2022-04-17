@@ -9,6 +9,46 @@
     <title>GIPE 2022! @yield('title')</title>
 </head>
 <body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand mb-0 h1" href="{{(route('home.index'))}}">GIPE2022</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{(route('home.index'))}}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{(route('home.contact'))}}">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{{(route('blogposts.index'))}}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Blog Posts
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="{{(route('blogposts.index'))}}">List of Blog Posts</a>
+                      <a class="dropdown-item" href="{{(route('blogposts.create'))}}">Create a Post</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{(route('comments.create'))}}">Create Comment</a>
+                  </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="{{(route('author.index'))}}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Authors
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{(route('author.index'))}}">List of Authors</a>
+                    <a class="dropdown-item" href="{{(route('author.create'))}}">Create an Author</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </div>
 
     <div>
         @if (session('status'))

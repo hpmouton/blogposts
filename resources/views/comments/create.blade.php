@@ -1,4 +1,4 @@
-@extends('layout.nav')
+@extends('layout.app')
 @section('title', 'Create Comment')
 @section('content')
     <form action="{{route('comments.store')}}" method="post">
