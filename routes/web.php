@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\CommentController;
 
 
 
@@ -28,6 +29,9 @@ Route::resource('author', AuthorController::class);
 
 //blog route
 Route::resource('blogposts', BlogPostController::class);
+
+//comment route
+Route::resource('comments', CommentController::class);
 
 
 

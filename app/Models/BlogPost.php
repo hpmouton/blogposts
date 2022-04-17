@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use app\Models\Comment;
+use App\Models\Comment;
 class BlogPost extends Model
 {
     use HasFactory;
