@@ -41,5 +41,8 @@ Route::get('/recent-posts/{days_ago?}', function ($daysAgo = 20) {
     return 'Posts from '.$daysAgo. 'days ago.';
 })->name('posts.recent.index');
 
+//403 error page
+Route::view('403', 'errors.403');
+
 Auth::routes();
 
