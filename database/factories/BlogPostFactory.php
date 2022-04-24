@@ -20,7 +20,6 @@ class BlogPostFactory extends Factory
             //
             'blogPostTitle'=>$this->faker->sentence(4,true),
             'blogPostContent'=>$this->faker->text(200),
-            'user_id'=>$this->faker->randomElement(array('0','1','2')),
 
             'blogPostIsHighlight'=>$this->faker->randomElement(array('0','1')),
         ];

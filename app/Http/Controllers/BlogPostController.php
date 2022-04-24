@@ -12,6 +12,9 @@ class BlogPostController extends Controller
 {
 
 
+    public function __construct(){
+        $this->middleware('auth')->only(['create']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -86,6 +89,8 @@ class BlogPostController extends Controller
      */
     public function edit($id)
     {
+        $this->middleware('auth');
+
         return view('posts.edit',['blogpost' => BlogPost::findOrFail($id)]);
     }
 
@@ -99,6 +104,8 @@ class BlogPostController extends Controller
     public function update(StoreBlogPost $request, $id)
     {
         //
+        $this->middleware('auth');
+
         $blogpost = BlogPost::findOrFail($id);
 
         $validated = $request->validated();

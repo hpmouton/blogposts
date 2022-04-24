@@ -19,6 +19,7 @@ class BlogPostSeeder extends Seeder
         BlogPost::factory()
             ->count(30)
             ->hasComments(rand(0,7))
+            ->hasUser()
             ->create();
     }
 }

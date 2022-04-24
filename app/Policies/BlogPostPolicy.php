@@ -54,6 +54,8 @@ class BlogPostPolicy
     public function update(User $user, BlogPost $blogPost)
     {
         //
+        return $user->hasRole('Super-Admin');
+
     }
 
     /**

@@ -4,7 +4,7 @@
 
 <div class="container">
     <h1>Edit The Post Details</h1>
-    <form action="{{ route('blogposts.update',['blogpost'=>$blogpost->id])}}" method="POST">
+    <form action="{{ route('blogposts.update',['blogpost'=>$blogpost->id])}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         @include('posts.partials.form')

@@ -29,7 +29,6 @@ Route::resource('author', AuthorController::class);
 
 //blog route
 Route::resource('blogposts', BlogPostController::class);
-
 //comment route
 Route::resource('comments', CommentController::class);
 
