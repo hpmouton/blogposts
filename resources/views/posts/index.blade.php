@@ -9,6 +9,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Content</th>
+                <th scope="col">Writer</th>
                 <th scope="col">Comments</th>
                 <th scope="col">Highlight</th>
                 <th scope="col" colspan="2">
@@ -24,6 +25,7 @@
                 <th scope="row">{{$key+1}}</th>
                 <td>{{$blogpost['blogPostTitle']}}</td>
                 <td>{{$blogpost['blogPostContent']}}</td>
+                <td>{{ $blogpost->User['name']}}</td>
                 <td>{{$blogpost['comments_count'];}}</td>
 
                 <td>{{$blogpost['blogPostIsHighlight']==1 ? 'YES' : 'NO'}}</td>

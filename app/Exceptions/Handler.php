@@ -38,7 +38,7 @@ class Handler extends ExceptionHandler
             //
         });
     }
-    public function render($request, Exception $exception)
+   /* public function render($request, Exception $exception)
 {
 
 
@@ -47,4 +47,5 @@ class Handler extends ExceptionHandler
     }
     return parent::render($request, $exception);
 }
+*/
 }

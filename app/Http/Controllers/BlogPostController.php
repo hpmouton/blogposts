@@ -19,7 +19,7 @@ class BlogPostController extends Controller
      */
     public function index()
     {
-        $blogpost = BlogPost::withCount('comments')->get();
+        $blogpost = BlogPost::withCount('comments')->with('User')->get();
 
         return view('posts.index',compact('blogpost'));
 
@@ -53,6 +53,7 @@ class BlogPostController extends Controller
         $blogpost->blogPostTitle = $request ['blogPostTitle'];
         $blogpost->blogPostContent = $request ['blogPostContent'];
         $blogpost->blogPostIsHighlight = $request ['blogPostIsHighlight'] == 'on' ? 1 : 0;
+        $blogpost->user_id = Auth::user()->id;
 
         $blogpost->save();
 
